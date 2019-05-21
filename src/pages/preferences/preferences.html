@@ -1,0 +1,72 @@
+<!--
+  Generated template for the PreferencesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Edit Preferences</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Your current preferences</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label class="prefLabel">Operating Hours:</ion-label>
+      <ion-label class="prefLabel">{{ preference.minTime  }} - {{ preference.maxTime }}</ion-label>
+      <ion-label class="prefLabel">Rate:</ion-label>  
+      <ion-label class="prefLabel">{{ preference.amount }} PHP / {{ preference.rate }} minutes</ion-label>    
+    </ion-card-content>
+
+  </ion-card>
+  <ion-list>
+    <br>
+      <ion-label class="prefLabel">
+        Set your operating hours (24-hour format)
+      </ion-label>
+      <ion-item-divider></ion-item-divider>
+    <ion-item class="prefLabel">
+        <ion-label>Set opening time: </ion-label>
+        <ion-datetime [(ngModel)]="minTime" placeholder="00:00" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+    <ion-item class="prefLabel">
+        <ion-label>Set closing time: </ion-label>
+        <ion-datetime [(ngModel)]="maxTime" placeholder="10:00" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>  
+    <ion-item-divider></ion-item-divider>
+      <ion-label class="prefLabel">
+        Set your price rate
+      </ion-label>
+    <ion-item-divider>
+    <div *ngIf="inputError">
+      <ion-label class="message" position="floating" color="danger">Amount must be greater than 0.</ion-label>
+    </div>
+    </ion-item-divider>
+    <ion-item class="prefLabel">
+      <ion-label>Amount: </ion-label>
+      <ion-input [(ngModel)]="amount" (ionChange)="checkInput(amount)" type="number"></ion-input>
+    </ion-item>
+    <ion-item class="prefLabel">
+      <ion-label>Every: </ion-label>
+      <ion-select [(ngModel)]="rate" placeholder="Select">
+        <ion-option  value="15">15 minutes</ion-option>
+        <ion-option value="30">30 minutes</ion-option>
+        <ion-option value="45">45 minutes</ion-option>
+        <ion-option value="60">1 hour</ion-option>
+        <ion-option value="120">2 hours</ion-option>
+      </ion-select>
+    </ion-item>
+    </ion-list>
+    <br><br> 
+  <ion-buttons right>
+    <button ion-button (click)="setTime(minTime, maxTime, amount, rate)">Save Preferences</button>
+  </ion-buttons>
+  
+</ion-content>

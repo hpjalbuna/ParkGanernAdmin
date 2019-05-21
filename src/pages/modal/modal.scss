@@ -1,0 +1,18 @@
+page-modal {
+    position: absolute;
+    display: block !important;
+    border-radius: 15px;
+
+    ion-header { 
+        background-color: orangered !important;
+    }
+
+    ion-button {
+        font-size: 30px !important;
+        background: transparent !important;
+    }
+
+    .message {
+        margin-left: 10px;
+    }
+}

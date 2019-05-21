@@ -1,0 +1,7 @@
+{
+  "name": "ParkGanernAdmin",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

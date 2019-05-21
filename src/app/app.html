@@ -1,0 +1,24 @@
+<ion-split-pane>
+  <ion-menu [content]="content" type="overlay" swipeEnabled="false">
+    <ion-header no-border color="primary">
+      <ion-toolbar color="light">
+          <ion-thumbnail>
+            <img src="https://i.imgur.com/FozxPS7.png" class="logo"> 
+          </ion-thumbnail>         
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="sidebarContent">
+      <ion-list>
+        <button class="menuBtn" large menuClose color="light" ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+    
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+
+</ion-split-pane>

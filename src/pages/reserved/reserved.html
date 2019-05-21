@@ -1,0 +1,109 @@
+<!--
+  Generated template for the OccupiedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Reserved Spaces</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col align-self-center col-5>
+          <ion-card class="summary">
+            <ion-card-header>
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-8>
+                      <h1>No. of Reserved Spaces</h1>
+                  </ion-col>
+                  <ion-col col-2>   
+                      <h1>{{ percentReserved | number: 0 }}%</h1>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #summaryCanvas></canvas>
+            </ion-card-content>
+            </ion-card>   
+        </ion-col>
+        <ion-col col-5>
+          <ion-card class="summary">
+            <ion-card-content>
+              <div class="parkingChart">
+                <ion-toolbar color="white">
+                <ion-segment color="primary">
+                  <ion-segment-button name="all" value="all" (click)="viewAll()" >All</ion-segment-button>
+                  <ion-segment-button name="available" value="available" (click)="viewReserved()">Reserved</ion-segment-button>
+                  <ion-segment-button value="occupied" (click)="viewNotReserved()">Not Reserved</ion-segment-button>
+                </ion-segment>
+                </ion-toolbar>
+                <div class="parkingChart">
+                  <ion-grid>
+                  <ion-row>
+                    <ion-col col-2 *ngFor="let space of allSpaces">
+                        <ion-chip color="{{space.value}}">
+                            <ion-label>{{ space.id }}</ion-label>
+                        </ion-chip>
+                    </ion-col>
+                  </ion-row>
+                  </ion-grid>
+                </div>
+              </div>                 
+            </ion-card-content>
+          </ion-card>
+
+         
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+   
+    
+    
+  <br><br>  
+
+  <div *ngFor="let space of reservedSpaces"> 
+    <h3>{{ space.id }}</h3>
+    <ion-grid class="reservedGrid">
+      <ion-row class="rowHeader">
+        <ion-col class="colHeader" size="auto">
+          <strong>Reservation ID</strong>
+        </ion-col>
+        <ion-col class="colHeader" size="auto">
+          <strong>User</strong>
+        </ion-col>
+        <ion-col class="colHeader" size="auto">
+          <strong>Start</strong>
+        </ion-col>
+        <ion-col class="colHeader" size="auto">
+          <strong>End</strong>
+        </ion-col>
+      </ion-row>
+      <ion-row class="reservedRow" *ngFor="let val of space.value">
+          <ion-col class="reservedCol" size="auto">
+            {{ val.id }}          
+          </ion-col>
+        <ion-col class="reservedCol" size="auto">
+          {{ val.value.user }}          
+        </ion-col>
+        <ion-col class="reservedCol" size="auto">
+          {{ val.value.start }}
+        </ion-col>
+        <ion-col class="reservedcol" size="auto">
+          {{ val.value.end }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>     
+    <br><br>
+  </div>
+  
+</ion-content>

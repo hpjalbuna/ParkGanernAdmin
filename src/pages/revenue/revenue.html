@@ -1,0 +1,174 @@
+<!--
+  Generated template for the RevenuePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>View Revenue</ion-title>
+  </ion-navbar>
+</ion-header>
+<br><br>
+<ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <ion-card>
+            <ion-card-header>
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-7>
+                    <h1>Today's Sales</h1>
+                    <h2>{{ todaysDate }}</h2>
+                  </ion-col>
+                  <ion-col col-3>
+                    <h1>P{{ todaysTotalSales }}.00</h1>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>              
+            </ion-card-header>
+            <ion-card-content>
+                <canvas #spaceCanvas></canvas>
+            </ion-card-content>
+          </ion-card>          
+        </ion-col>
+        <ion-col col-5>
+          <ion-card>
+            <ion-card-header>
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-8>
+                    <h1>Reservations Booked Today</h1>
+                    <h2>{{ todaysDate }}</h2>
+                  </ion-col>
+                  <ion-col col-2 >
+                    <h1>{{ todaysTotalReserved }}</h1>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #reservationCanvas></canvas>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+        
+      
+    <ion-card>
+      <ion-card-header>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-8>
+                <h1>Total Generated Sales</h1>
+              </ion-col>
+              <ion-col col-2>
+                <h1>P{{ totalRevenue }}.00</h1>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-7>
+              <canvas #revenueCanvas></canvas>
+            </ion-col>
+            <ion-col col-3>
+              <ion-list>
+                <ion-item>
+                  <ion-label><h1>View results</h1></ion-label>
+                  <ion-select placeholder="Select One" [(ngModel)]="query" (ionChange)="showSales(query)">
+                    <ion-option value="week">This Week</ion-option>
+                    <ion-option value="month">This Month</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+              <div class="revSummary">
+                <ion-grid>
+                  <ion-row class="revenueRow">
+                    <ion-col>
+                      <h1>Date</h1>
+                    </ion-col>
+                    <ion-col>
+                      <h1>Total</h1>
+                    </ion-col>
+                    
+                  </ion-row>
+                  <ion-row class="revenueRow"  *ngFor="let fee of revenueStats"> 
+                    <ion-col size="auto" class="revenueCol">
+                      <h2>{{ fee.date }}</h2>
+                    </ion-col>
+                    <ion-col size="auto" class="revenueCol">
+                      <h2>P{{ fee.total }}.00</h2>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>         
+            </ion-col> 
+          </ion-row>
+        </ion-grid>   
+      </ion-card-content>  
+    </ion-card>
+    
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-8>
+            <h1>Total Reservations </h1>
+          </ion-col>
+          <ion-col col-2>
+            <h1>{{ totalReserved }}</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-7>
+            <canvas #frequencyCanvas></canvas>
+          </ion-col>
+          <ion-col col-3>
+            <ion-list>
+              <ion-item>
+                <ion-label><h1>View results</h1></ion-label>
+                <ion-select placeholder="Select One" [(ngModel)]="query" (ionChange)="showReservations(query)">
+                  <ion-option value="week">This Week</ion-option>
+                  <ion-option value="month">This Month</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+            <div class="revSummary">
+              <ion-grid>
+                <ion-row class="revenueRow">
+                  <ion-col>
+                    <h1>Day</h1>
+                  </ion-col>
+                  <ion-col>
+                    <h1>Reservations</h1>
+                  </ion-col>
+                  
+                </ion-row>
+                <ion-row class="revenueRow"  *ngFor="let day of dailyReservations"> 
+                  <ion-col size="auto" class="revenueCol">
+                    <h2>{{ day.date }}</h2>
+                  </ion-col>
+                  <ion-col size="auto" class="revenueCol">
+                    <h2>{{ day.total }}</h2>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>         
+          </ion-col> 
+        </ion-row>
+      </ion-grid>        
+    </ion-card-content>
+  </ion-card>
+</ion-content>

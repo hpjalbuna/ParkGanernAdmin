@@ -1,0 +1,90 @@
+page-occupied {
+    ion-checkbox {
+        background: red;
+        size: 100;
+    }
+
+    ion-icon {
+        size: 20px;
+    }
+
+    ion-chip {
+        height: 30px;
+    }
+
+    ion-header,ion-navbar, ion-title{
+        font-size: 30px;
+        font-weight: 1 !important;
+    }
+
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+
+    .legendLabel {
+        font-size: 20px;
+        font-weight: 1;
+    }
+
+
+    .verticalLine {
+        width: 1px;
+        height: 150px;
+        background: gray;
+        margin: auto;
+    }
+
+    .cardLabel {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 25px;
+        font-weight: 1;
+        text-align: center;
+    }
+    .occupiedGrid .rowHeader {
+        background: orangered;
+        background: -moz-linear-gradient(top, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+        background: -webkit-linear-gradient(top, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+        background: linear-gradient(to bottom, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+      }
+
+
+    .occupiedCol:first-child {
+        border-left: solid 1px gray;
+    }
+    
+    .occupiedCol:last-child {
+        border-right: solid 1px grey;
+      }
+
+    .occupiedRow:nth-child(even) {
+        background: rgb(231, 231, 231);
+    }
+      
+
+    .occupiedRow:last-child .col {
+        border-bottom: solid 1px grey;
+    }
+
+    label {
+        position: relative;
+        text-align: center;
+        line-height: 5px;
+    }
+
+    .parkingChart {
+        margin-left: 20px;
+        margin-top: 10px;
+        color: white;
+        background-color: white;
+    }
+    
+    .occupiedGrid {
+        margin: 30px 5px
+    }
+
+    .summary {
+        height: 95%;
+    }
+
+}

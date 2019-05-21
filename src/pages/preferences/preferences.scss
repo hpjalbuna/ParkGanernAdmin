@@ -1,0 +1,16 @@
+page-preferences {  
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+    
+    ion-content {
+        color: #f4f4f4
+    }
+
+    ion-card, .prefLabel {
+        font-size: 20px;
+        font-weight: 1;
+    }
+
+    
+}

@@ -1,0 +1,36 @@
+page-revenue {
+
+   .info {
+       display: inline-block;
+   }
+
+
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+
+    ion-card-header {
+        font-weight: bold;
+    
+    }
+    
+    ion-card {
+        margin: 5px 5px;
+        border-radius: 10px;
+        box-shadow: none;
+        border: none;
+    }
+
+    ion-grid {
+        font-size: 15px !important;
+    }
+
+    .revenueRow {
+        margin-left: 10px;
+    }
+
+    .revSummary {
+        overflow: auto;
+    }
+
+}

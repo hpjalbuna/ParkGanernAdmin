@@ -1,0 +1,52 @@
+<!--
+  Generated template for the MisparkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-buttons fill="clear" color="primary" end> 
+      <button ion-button fill="clear" color="dark" (click)=closeModal()>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>View Details</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-select [(ngModel)]="item" placeholder="Select area">
+      <ion-option value="all" (ionSelect)="onChange($event, all)">All</ion-option>
+      <ion-option  *ngFor="let i of wrongParking" [value]="i.space" (ionSelect)="onChange($event, i.space)"> Area {{ i.space }}</ion-option>
+    </ion-select>
+    </ion-item>
+    
+  </ion-list>
+    
+  <ion-list>
+    <ion-item *ngFor="let i of filteredList; let x = index" text-wrap>
+      
+      <ion-item-divider color="default">{{ i.space }} ({{ i.total }})</ion-item-divider>
+          <ion-list *ngFor="let j of i.summary">             
+          <ion-item-divider color="light">{{ j.space }} ({{ j.subtotal }})</ion-item-divider>        
+            <ion-item>
+            <ion-grid class="misparkGrid">
+              <ion-row class="rowHeader">
+                <ion-col class="colHeader">User</ion-col>
+                <ion-col class="colHeader">Value</ion-col>
+              </ion-row>
+              <ion-row class="misparkRow" *ngFor="let m of j.value">
+                <ion-col class="misparkCol" *ngIf="m">{{ m.user }}</ion-col>
+                <ion-col class="misparkCol" *ngIf="m">{{ m.value }}</ion-col>
+              </ion-row>     
+            </ion-grid>
+          </ion-item>
+          </ion-list>
+        
+      </ion-item>
+  </ion-list>
+</ion-content>

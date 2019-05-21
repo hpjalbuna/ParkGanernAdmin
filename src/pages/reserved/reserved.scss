@@ -1,0 +1,62 @@
+page-reserved {
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+
+    .legendLabel {
+        font-size: 20px;
+        font-weight: 1;
+    }
+    
+    .verticalLine {
+        width: 1px;
+        height: 150px;
+        background: gray;
+        margin: auto;
+      }
+
+    .cardLabel {
+        font-size: 30px;
+        font-weight: 1;
+        text-align: center
+    }
+
+    .reservedGrid .rowHeader {
+        background: orangered;
+        background: -moz-linear-gradient(top, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+        background: -webkit-linear-gradient(top, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+        background: linear-gradient(to bottom, #fdc543 0%, #fcb91e 66%, #FCB205 100%);
+      }
+
+
+    .reservedCol:first-child {
+        border-left: solid 1px gray;
+    }
+    
+    .reservedCol:last-child {
+        border-right: solid 1px grey;
+    }
+
+    .reservedRow:nth-child(even) {
+        background: rgb(231, 231, 231);
+    }
+      
+
+    .reservedRow:last-child .col {
+        border-bottom: solid 1px grey;
+    }
+
+    .parkingChart { 
+        margin-left: 10px;
+        color: white;
+        background-color: white;
+    }
+    
+    .reservedGrid {
+        margin: 30px 5px
+    }
+
+    .summary {
+        height: 95%;
+    }
+}

@@ -1,0 +1,28 @@
+page-category {
+    ion-list{
+        background-color: map-get($colors, light) !important
+    }
+    .scroll-content {
+        background-color: map-get($colors, light);
+    }
+
+    .editBtn {
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+    }
+
+    .categoryList {
+        height: 40px;
+    }
+
+    .deleteBtn {
+        vertical-align: middle
+    }
+
+    .modalPage {
+        position: absolute;
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
