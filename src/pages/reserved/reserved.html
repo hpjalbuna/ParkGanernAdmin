@@ -76,9 +76,6 @@
     <ion-grid class="reservedGrid">
       <ion-row class="rowHeader">
         <ion-col class="colHeader" size="auto">
-          <strong>Reservation ID</strong>
-        </ion-col>
-        <ion-col class="colHeader" size="auto">
           <strong>User</strong>
         </ion-col>
         <ion-col class="colHeader" size="auto">
@@ -89,9 +86,6 @@
         </ion-col>
       </ion-row>
       <ion-row class="reservedRow" *ngFor="let val of space.value">
-          <ion-col class="reservedCol" size="auto">
-            {{ val.id }}          
-          </ion-col>
         <ion-col class="reservedCol" size="auto">
           {{ val.value.user }}          
         </ion-col>

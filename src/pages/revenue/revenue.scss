@@ -21,6 +21,10 @@ page-revenue {
         border: none;
     }
 
+    .revenueCard {
+        height: 450px;
+    }
+
     ion-grid {
         font-size: 15px !important;
     }
@@ -30,7 +34,8 @@ page-revenue {
     }
 
     .revSummary {
-        overflow: auto;
+        height: 350px;
+        overflow: scroll !important;
     }
 
 }

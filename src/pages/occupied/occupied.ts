@@ -126,6 +126,7 @@ export class OccupiedPage {
     this.wrongParking = []
     this.afDatabase.database.ref(`misparking`).orderByValue().on('value', parkSnapshot => {
       var result = parkSnapshot.val();      
+      console.log(result)
       for(let k in result){
         this.info = []
         var id = k.slice(0,1)

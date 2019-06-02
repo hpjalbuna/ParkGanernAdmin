@@ -74,48 +74,42 @@
     </ion-card>
     <ion-grid class="occupiedGrid" color="primary">
       <ion-row class="rowHeader">
-        <ion-col class="colHeader" col-2>
-          <strong>Reservation ID</strong>
-        </ion-col>
-        <ion-col class="colHeader" col-2>
+        <ion-col class="colHeader" col-size="auto">
           <strong>User</strong>
         </ion-col>
-        <ion-col class="colHeader" col-1>
+        <ion-col class="colHeader" col-size="auto">
           <strong>Space</strong>
         </ion-col>
-        <ion-col class="colHeader" col-1>
+        <ion-col class="colHeader" col-size="auto">
           <strong>Start</strong>
         </ion-col>
-        <ion-col class="colHeader" col-1>
+        <ion-col class="colHeader" col-size="auto">
           <strong>End</strong>
         </ion-col>
-        <ion-col class="colHeader" col-1>
+        <ion-col class="colHeader" col-size="auto">
           <strong>Fee</strong>
         </ion-col>
-        <ion-col class="colHeader" col-2>
+        <ion-col class="colHeader" col-size="auto">
           <strong>Confirm Payment</strong>
         </ion-col>
       </ion-row>
       <ion-row class="occupiedRow" *ngFor="let space of occupiedSpaces">
-          <ion-col col-2 class="occupiedCol">
-            {{ space.id }}
-          </ion-col>
-          <ion-col col-2 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             {{ space.value.user }}
           </ion-col>
-          <ion-col col-1 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             {{ space.value.space }}
           </ion-col>
-          <ion-col col-1 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             {{ space.value.start }}
           </ion-col>
-          <ion-col col-1 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             {{ space.value.end }}
           </ion-col>
-          <ion-col col-1 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             P{{ space.value.fee | number: 0 }}
           </ion-col>
-          <ion-col col-2 class="occupiedCol">
+          <ion-col col-size="auto" class="occupiedCol">
             <button ion-button clear small outline color="primary" (click)="confirmPayment(space)">Paid</button>
           </ion-col>
       </ion-row>
